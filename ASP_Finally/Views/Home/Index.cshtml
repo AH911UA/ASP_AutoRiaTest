@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row"> @Html.Raw(TempData["test"]) </div>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container justify-content-center">
+
+        @foreach (var car in Model)
+        {
+        <div class="card">
+            <h3 class="card-text text-description">
+                @car.NameCar
+            </h3>
+            <img class="card-img-top" src="@car.PhotoData[0]" alt="CAR">
+            <div class="card-body">
+                <p class="card-text text-description">
+                    Дата добавления: - @car.Year
+                </p>
+                <p class="card-text text-description">
+                    Город: - @car.LocationCityName
+                </p>
+                <p class="card-text text-description">
+                    Цена: - @car.USD $
+                </p>
+                <p class="card-text text-description">
+                    Конетактный номер: - @car.Phone
+                </p>
+                <p class="card-text text-description">
+                    Описание товара: - @car.Description
+                </p>
+            </div>
+        </div>
+        }
+    </div>
+</body>
+</html>
+
+
+
+
+    
